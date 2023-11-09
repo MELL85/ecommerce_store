@@ -1,10 +1,14 @@
+import { client } from "./lib/sanity";
 
+import { HeroBanner, FooterBanner } from "./components";
 
-export default function Home() {
+export default async function Home() {
+
+  const { bannerData, products } = await getData();
+
   return (
     <>
-      HeroBanner
-      {/* <HeroBanner heroBanner={bannerData.length && bannerData[0]} /> */}
+      <HeroBanner heroBanner={bannerData} />
 
       <div className="products-heading">
         <h2>Best Selling Products</h2>
@@ -15,8 +19,22 @@ export default function Home() {
         {/* {products?.map((product) => <Product key={product._id} product={product} />)} */}
       </div>
 
-      FooterBanner
-      {/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
+      <FooterBanner footerBanner={bannerData} />
+
     </>
   )
+}
+
+
+async function getData() {
+  const bannerQuery = '*[_type == "banner"][0]';
+  const productsQuery = '*[_type == "product"]';
+
+  const bannerData = await client.fetch(bannerQuery);
+  const products = await client.fetch(productsQuery);
+
+  return ({
+    bannerData,
+    products,
+  });
 }
