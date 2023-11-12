@@ -1,6 +1,6 @@
 import { client } from "./lib/sanity";
 
-import { HeroBanner, FooterBanner } from "./components";
+import { HeroBanner, FooterBanner, Product } from "./components";
 
 export default async function Home() {
 
@@ -16,7 +16,9 @@ export default async function Home() {
       </div>
 
       <div className="products-container">
-        {/* {products?.map((product) => <Product key={product._id} product={product} />)} */}
+        { products?.map((product) =>
+          <Product key={product._id} product={product} />
+        ) }
       </div>
 
       <FooterBanner footerBanner={bannerData} />

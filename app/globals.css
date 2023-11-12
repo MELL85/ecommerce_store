@@ -491,6 +491,14 @@ span.text-red {
 
 }
 
+.product-error-message {
+  font-weight: 700;
+  font-size: 36px;
+  color: #f02d34;
+  text-align: center;
+  margin: 100px auto;
+}
+
 .product-detail-image {
   border-radius: 15px;
   background-color: #ebebeb;
