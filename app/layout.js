@@ -1,4 +1,5 @@
 import { Navbar, Footer } from './components'
+import { StateContext } from './context/StateContext'
 
 // import { Inter } from 'next/font/google'
 import './globals.css'
@@ -14,17 +15,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* <body className={inter.className}> */}
-          <body className="layout">
-            <header>
-              <Navbar />
-            </header>
-            <main className="main-container">
-              {children}
-            </main>
-            <footer>
-              <Footer />
-            </footer>
-          </body>
+      <body className="layout">
+        <StateContext>
+          <header>
+            <Navbar />
+          </header>
+          <main className="main-container">
+            {children}
+          </main>
+          <footer>
+            <Footer />
+          </footer>
+        </StateContext>
+      </body>
     </html>
   )
 }

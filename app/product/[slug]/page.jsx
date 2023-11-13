@@ -1,7 +1,5 @@
-import { Product, ImageGallery } from '@/app/components';
-// import { useStateContext } from '../../context/StateContext';
+import { Product, ImageGallery, ProductPageButton, ProductPageDetail } from '@/app/components';
 import { client } from '@/app/lib/sanity';
-import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 
 const getData = async (slug) => {
@@ -15,6 +13,7 @@ const getData = async (slug) => {
     return ({ products, product })
 }
 
+
 const ProductDetails = async ({ params: { slug } }) => {
 
     const { product, products } = await getData(slug);
@@ -23,15 +22,7 @@ const ProductDetails = async ({ params: { slug } }) => {
         return <p className="product-error-message" >Product not found</p>;
     }
 
-    const { image, name, details, price } = product;
-
-    // const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
-
-    // const handleBuyNow = () => {
-    //     onAdd(product, qty);
-
-    //     setShowCart(true);
-    // }
+    const { image, name } = product;
 
     return (
         <div>
@@ -43,46 +34,11 @@ const ProductDetails = async ({ params: { slug } }) => {
                 <div className="product-detail-desc">
                     <h1>{name}</h1>
                     <div className="reviews">
-                        <div>
-                            <AiFillStar />
-                            <AiFillStar />
-                            <AiFillStar />
-                            <AiFillStar />
-                            <AiOutlineStar />
-                        </div>
-                        <p>
-                            (20)
-                        </p>
-                        <h4>Details: </h4>
-                        <p>{details}</p>
-                        <p className="price">${price}</p>
-
-                        <div className="quantity">
-                            <h3>Quantity:</h3>
-                            <p className="quantity-desc">
-                                {/* <span className="minus" onClick={decQty} > <AiOutlineMinus /> </span> */}
-                                {/* <span className="num" >{qty}</span> */}
-                                {/* <span className="plus" onClick={incQty} > <AiOutlinePlus /> </span> */}
-                            </p>
-                        </div>
+                        <ProductPageDetail product={product} />
                     </div>
 
                     <div className="buttons">
-                        <button
-                            type="button"
-                            className="add-to-cart"
-                        // onClick={() => onAdd(product, qty)}
-                        >
-                            Add to Cart
-                        </button>
-
-                        <button
-                            type="button"
-                            className="buy-now"
-                        // onClick={handleBuyNow}
-                        >
-                            Buy Now
-                        </button>
+                        <ProductPageButton product={product} />
                     </div>
                 </div>
             </div>
@@ -103,28 +59,5 @@ const ProductDetails = async ({ params: { slug } }) => {
         </div>
     )
 }
-
-// export const getStaticPaths = async () => {
-//     const query = `*[_type == "product"] {
-// slug {
-//     current
-// }
-//     }
-//     `;
-
-//     const products = await client.fetch(query);
-
-//     const paths = products.map((product) => ({
-//         params: {
-//             slug: product.slug.current
-//         }
-//     }));
-
-//     return {
-//         paths,
-//         fallback: 'blocking'
-//     }
-// }
-
 
 export default ProductDetails
