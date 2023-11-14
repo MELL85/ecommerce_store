@@ -1,6 +1,7 @@
 import { Product, ImageGallery, ProductPageButton, ProductPageDetail } from '@/app/components';
 import { client } from '@/app/lib/sanity';
 
+export const dynamic = "force-dynamic";
 
 const getData = async (slug) => {
 

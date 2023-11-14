@@ -1,6 +1,8 @@
 import { client } from "./lib/sanity";
 import { HeroBanner, FooterBanner, Product } from "./components";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
 
   const { bannerData, products } = await getData();
