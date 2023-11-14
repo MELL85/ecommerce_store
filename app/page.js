@@ -1,5 +1,4 @@
 import { client } from "./lib/sanity";
-
 import { HeroBanner, FooterBanner, Product } from "./components";
 
 export default async function Home() {
