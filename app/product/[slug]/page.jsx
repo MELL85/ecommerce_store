@@ -13,7 +13,7 @@ const getData = async (slug) => {
     return ({ products, product })
 }
 
-
+ 
 const ProductDetails = async ({ params: { slug } }) => {
 
     const { product, products } = await getData(slug);

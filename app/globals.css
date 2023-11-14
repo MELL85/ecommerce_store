@@ -198,11 +198,11 @@ span.text-red {
 .hero-banner-image {
   position: absolute;
   top: 0%;
-  right: 20%;
+  /* right: 20%; */
+  right: -5%;
   width: 450px;
   height: 450px;
 }
-
 
 .desc {
   position: absolute;
@@ -226,7 +226,6 @@ span.text-red {
   margin-bottom: 12px;
   font-weight: 700;
   font-size: 16px;
-  /* color: black; */
   align-self: flex-end;
 }
 
@@ -288,8 +287,6 @@ span.text-red {
 
 .footer-banner-image {
   position: absolute;
-  /* top: -35%;
-  left: 8%; */
   top: -25%;
   left: 25%;
 }
@@ -319,7 +316,6 @@ span.text-red {
   right: 0;
   top: 0;
   z-index: 100;
-  /* will-change: transform; */
   transition: all 1s ease-in-out;
 
 }
@@ -516,6 +512,7 @@ span.text-red {
 
 .small-images-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 20px;
 }
@@ -620,7 +617,6 @@ span.text-red {
 
 .quantity-desc {
   border: 1px solid gray;
-  /* padding: 6px; */
   display: flex;
   align-items: center;
 }
@@ -820,15 +816,11 @@ span.text-red {
 
   .cart-heading {
     margin-top: 35px;
+    margin-left: 40px;
   }
 
   .product-container {
     margin-top: 10px;
-  }
-
-  .product {
-    padding: 20px 5px;
-
   }
 
   .product .cart-product-image {
@@ -855,8 +847,6 @@ span.text-red {
   .top {
     flex-wrap: wrap;
     gap: 10px;
-
-
   }
 
   .item-desc .bottom {
@@ -873,10 +863,6 @@ span.text-red {
     color: black;
   }
 
-  .cart-bottom {
-    padding: 30px;
-  }
-
   .total h3 {
     font-size: 20px;
   }
@@ -888,7 +874,6 @@ span.text-red {
 
   .success-wrapper,
   .cancel-wrapper {
-
     min-height: 69vh;
   }
 
@@ -910,5 +895,17 @@ span.text-red {
   .btn-container {
     width: 300px;
     margin: auto;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .hero-banner-image {
+    right: 5%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-banner-image {
+    right: 10%;
   }
 }

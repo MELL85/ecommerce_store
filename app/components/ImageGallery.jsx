@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { urlFor } from "../lib/sanity";
 
-
 const ImageGallery = ({ image }) => {
 
     const [index, setIndex] = useState(0);
@@ -12,7 +11,7 @@ const ImageGallery = ({ image }) => {
         <>
             <div className="image-container">
                 <img src={urlFor(image && image[index])}
-                    className="product_detail-image"
+                    className="product-detail-image"
                     alt="" />
             </div>
 
