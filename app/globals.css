@@ -163,7 +163,6 @@ span.text-red {
   height: 500px;
   line-height: 0.9;
   width: 100%;
-
 }
 
 .hero-banner-container .beats-solo {
@@ -399,8 +398,8 @@ span.text-red {
 }
 
 .product .cart-product-image {
-  width: 180px;
-  height: 150px;
+  /* width: 180px;  */
+  /* height: 150px; */
   border-radius: 15px;
   background-color: #ebebeb;
 }

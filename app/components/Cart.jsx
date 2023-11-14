@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
 // import toast from 'react-hot-toast';
@@ -46,9 +47,13 @@ const Cart = () => {
                     {cartItems.length >= 1 && cartItems.map((item) => (
                         <div className="product" key={item._id} >
 
-                            <img src={urlFor(item?.image[0]).url()}
-                                className="cart-product-image" />
-
+                            <Image
+                                src={urlFor(item?.image[0]).url()}
+                                className="cart-product-image"
+                                width={180}
+                                height={150}
+                                alt={item.name}
+                            />
 
                             <div className="item-desc">
                                 <div className="flex top">
@@ -85,16 +90,18 @@ const Cart = () => {
                             <h3>${totalPrice}</h3>
                         </div>
                         <div className="btn-container">
-                            <button
-                                type="button"
-                                className="btn"
-                                onClick=""
-                            >
-                                Pay with Stripe
-                            </button>
+                            <Link href="/success" >
+                                <button
+                                    type="button"
+                                    className="btn"
+                                    onClick={() => setShowCart(false)}
+                                >
+                                    Pay with Stripe
+                                </button>
+                            </Link>
                         </div>
                     </div>
-                )} 
+                )}
 
             </div>
         </div>
