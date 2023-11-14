@@ -484,6 +484,7 @@ span.text-red {
   margin-top: 60px;
   color: #324d67;
 
+  /* overflow: hidden; */
 }
 
 .product-error-message {
@@ -498,8 +499,8 @@ span.text-red {
   border-radius: 15px;
   background-color: #ebebeb;
 
-  width: 400px;
-  height: 400px;
+  /* width: 400px; */
+  /* height: 400px; */
   cursor: pointer;
   transition: .3s ease-in-out;
 }
@@ -519,8 +520,8 @@ span.text-red {
 .small-image {
   border-radius: 8px;
   background-color: #ebebeb;
-  width: 70px;
-  height: 70px;
+  /* width: 70px; */
+  /* height: 70px; */
   cursor: pointer;
 }
 
@@ -836,7 +837,8 @@ span.text-red {
   }
 
   .product-detail-container {
-    margin: 20px;
+    /* margin: 20px; */
+    margin: 20px auto;
   }
 
   .item-desc .flex {
